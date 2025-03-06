@@ -1,5 +1,5 @@
 provider "google" {
   project = "dbg-cloud-networks-sbox-f4"
-  region  = "EUROPE-WEST3"
-  zone    = "EUROPE-WEST3-a"
+  region  = "europe-west3"
+  zone    = "europe-west3-a"
 }
