@@ -4,6 +4,19 @@ data "google_compute_image" "ubuntu" {
   family      = "ubuntu-2204-lts"
 }
 
+resource "google_compute_subnetwork" "app" {
+  name          = "app"
+  ip_cidr_range = "10.2.0.0/16"
+  region        = "europe-west3"
+  network       = google_compute_network.app.id
+}
+
+resource "google_compute_network" "app" {
+  name                    = "app"
+  auto_create_subnetworks = false
+}
+
+
 resource "google_compute_instance" "web" {
   name         = "web"
   machine_type = "e2-micro"
@@ -15,7 +28,7 @@ resource "google_compute_instance" "web" {
     }
   }
   network_interface {
-   subnetwork = "default"
+   subnetwork = "app"
    access_config {
       # Leave empty for dynamic public IP
     }
