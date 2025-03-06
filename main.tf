@@ -17,8 +17,8 @@ resource "google_compute_network" "app" {
 }
 
 
-resource "google_compute_instance" "web" {
-  name         = "web"
+resource "google_compute_instance" "blog" {
+  name         = "blog"
   machine_type = "e2-micro"
 
   
