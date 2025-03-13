@@ -17,7 +17,7 @@ subnets = [
     {
     name                    = "${var.network_name}-web"
     description             = "Inbound web"
-    source_ranges           = ["0.0.0.0/o"]
+    source_ranges           = ["0.0.0.0/0"]
     target_tags             = ["${var.network_name}-web"]
 
     allow = [
@@ -40,7 +40,7 @@ resource "google_compute_instance" "blog" {
   name         = var.app_name
   machine_type = var.machine_type
 
-  tags = ["$(var.network_name)-web"]
+  tags = ["${var.network_name}-web"]
 
   boot_disk {
     initialize_params {
