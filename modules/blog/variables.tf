@@ -1,6 +1,5 @@
 variable "project_id" {
 type    = string
-default = "dbg-cloud-networks-sbox-f4"
 }
 
 variable "region" {
@@ -10,7 +9,6 @@ default = "europe-west3"
 
 variable "network_name" {
 type    = string
-default = "app"
 }
 
 variable "network_ip_range" {
@@ -30,7 +28,6 @@ default = "ubuntu-2204-lts"
 
 variable "app_name" {
 type    = string
-default = "blog"
 }
 
 variable "machine_type" {
