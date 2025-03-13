@@ -36,3 +36,12 @@ resource "google_compute_instance" "blog" {
 
   allow_stopping_for_update = true
 }
+
+resource "google_storage_bucket" "alex-bucket" {
+  name          = "alex-130325-via-git"
+  location      = "EUROPE-WEST3"
+  force_destroy = true
+  project       = "dbg-cloud-networks-sbox-f4"
+
+  uniform_bucket_level_access = true
+}
