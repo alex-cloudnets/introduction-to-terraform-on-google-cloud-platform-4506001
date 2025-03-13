@@ -22,7 +22,7 @@ subnets = [
 
     allow = [
       {
-      protocol = "tcp""
+      protocol = "tcp"
       ports    = ["80","443"]
       }
     ]
